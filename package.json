@@ -1,0 +1,25 @@
+{
+  "name": "utility",
+  "version": "1.0.0",
+  "description": "Slim basic Utility functions. No need for overloaded Librarys",
+  "main": "utility.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenRichter/utility.git"
+  },
+  "keywords": [
+    "util",
+    "utility",
+    "helpers",
+    "formatting"
+  ],
+  "author": "Ben K. Richter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BenRichter/utility/issues"
+  },
+  "homepage": "https://github.com/BenRichter/utility#readme"
+}
