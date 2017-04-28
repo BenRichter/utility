@@ -6,7 +6,7 @@
  *
  * @return {string} padded number string
  */
-function pad(num, size = 2) {
+export const pad = (num, size = 2) => {
     let paddedNum = `${num}`;
 
     while (paddedNum.length < size) {
@@ -22,7 +22,7 @@ function pad(num, size = 2) {
  *
  * @return {string} formatted string
  */
-function formatDate(dateString) {
+export const formatDate = (dateString) => {
     const date = new Date(dateString);
 
     return `${pad(date.getDate())}.${pad(date.getMonth())}.${date.getFullYear()},
@@ -37,7 +37,7 @@ function formatDate(dateString) {
  *
  * @return {string} currency string
  */
-function formatMoney(price, sign = '') {
+export const formatMoney = (price, sign = '') => {
     const pieces = parseFloat(price).toFixed(2).replace('.', ',').split('');
     let ii = pieces.length - 3;
 
@@ -47,5 +47,3 @@ function formatMoney(price, sign = '') {
 
     return pieces.join('') + sign;
 }
-
-export {formatDate, pad, formatMoney};
