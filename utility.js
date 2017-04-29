@@ -49,7 +49,7 @@ export const formatMoney = (price, sign = '') => {
 
 
 /**
- * Clear arrays of any type from duplicate entries
+ * Clear arrays of any type from duplicate entries in this set
  * https://twitter.com/_ericelliott/status/832065642987524096?lang=de
  *
  * @param {Array} arr - array with duplication [1,1,3]
