@@ -11,6 +11,7 @@ export const pad = (num, size = 2) => {
     while (paddedNum.length < size) {
         paddedNum = `0${paddedNum}`;
     }
+    
     return paddedNum;
 };
 
@@ -22,6 +23,11 @@ export const pad = (num, size = 2) => {
  * @return {string}            - formatted string
  */
 export const formatDate = (dateString) => {
+    // catch wrong date format
+    if (isNaN(Date.parse(dateString))) {
+        return '-';
+    }
+    
     const date = new Date(dateString);
 
     return `${pad(date.getDate())}.${pad(date.getMonth())}.${date.getFullYear()},
