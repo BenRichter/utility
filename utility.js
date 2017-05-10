@@ -11,10 +11,22 @@ export const pad = (num, size = 2) => {
     while (paddedNum.length < size) {
         paddedNum = `0${paddedNum}`;
     }
-    
+
     return paddedNum;
 };
 
+/**
+ * Reorder wrong formatted date strings to return valid Date object
+ *
+ * @param  {String} dateString - date string
+ * @return {Date}              -Self reference
+ */
+export const dateFromString = (dateString) => {
+    const split = $.map(dateString.split(/[^0-9]/), function (char) {
+        return parseInt(char, 10);
+    });
+    return new Date(split[0], split[1] - 1 || 0, split[2] || 1, split[3] || 0, split[4] || 0);
+}
 
 /**
  * Format date to dd.mm.yyyy, hh:mm
@@ -23,11 +35,13 @@ export const pad = (num, size = 2) => {
  * @return {string}            - formatted string
  */
 export const formatDate = (dateString) => {
+    dateString = dateFromString(dateString);
+
     // catch wrong date format
     if (isNaN(Date.parse(dateString))) {
         return '-';
     }
-    
+
     const date = new Date(dateString);
 
     return `${pad(date.getDate())}.${pad(date.getMonth())}.${date.getFullYear()},
